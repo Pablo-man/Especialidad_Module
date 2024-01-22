@@ -1,0 +1,6 @@
+flask
+Flask-SQLAlchemy
+mysqlclient
+dotenv
+
+#reemplazar variables de entorno ej:'DATABSE_CONNECTION_URI' por las correspondientes a su ordenador, en archivo config.py
