@@ -3,6 +3,7 @@ from routes.contacts import contacts
 from flask_sqlalchemy import SQLAlchemy
 from utils.db import db
 from config import DATABASE_CONNECTION_URI
+from flask_marshmallow import Marshmallow
 
 app= Flask(__name__)
 app.secret_key= "secret key"

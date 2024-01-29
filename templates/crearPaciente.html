@@ -1,0 +1,38 @@
+{%extends 'layoutAdmin.html'%}
+{%block body%}
+
+{% with messages = get_flashed_messages() %}
+    {%if messages%}
+        {%for message in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {%endfor%}
+    {%endif%}
+{%endwith%}
+
+
+
+<div class="col-md-5 mx-auto">
+    <div class="card mt-5 text-center">
+        <div class="card-header">
+            <h3>Registro Especialidad</h3>
+        </div>
+        <div class="card-body">
+            <form action="/new" method="post" id="form2" >
+         
+                <div class="form-group">
+                    <label ID="Label1">Ingrese nueva especialidad<label>
+                    <input type="text" name="nombre" id="TextBox_Nombre" class="form-control" oninput="validarTexto(this)">
+                </div>
+
+                <button class="btn btn-primary btn-block mt-4">Crear</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

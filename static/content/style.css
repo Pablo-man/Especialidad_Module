@@ -4,6 +4,35 @@
 .navbar{
     background-color: #2b3e4f;
 }
-.nav-link {
-    
+.btnSesion{
+    background-color: rgba(255, 0, 0, 0.84);
+    border-radius:10px;
+    border: solid 1px #d00;
+    text-decoration: none; /*overline, none, line-through, underline*/
+    height: 40px;
+    margin-top: 10px;
+}
+.btnSesion:hover{
+    color: rgb(245, 239, 239);
+    background-color: #f00;
+}
+.masthead{
+    background-color: #1bbc9b;
+}
+.alert{
+    background-color: rgb(16, 79, 127);
+    color: aliceblue;
+    width: auto;
+}
+.principal{
+    padding: 5px;
+    border: 0px;
+    background-color: blue;
+    color:#fff
+}
+.secundario{
+    padding: 5px;
+    border: 0px;
+    background-color: #ccc;
+    color:#fff
 }

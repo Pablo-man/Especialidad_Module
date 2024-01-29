@@ -1,0 +1,31 @@
+{%extends 'layoutAdmin.html'%}
+{%block body%}
+
+{% with messages = get_flashed_messages() %}
+    {%if messages%}
+        {%for message in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {%endfor%}
+    {%endif%}
+{%endwith%}
+
+<div class="container p-5">
+
+    <div class="col-md-7 mx-auto">
+        <h2 class="text-center">Listado Especialidades</h2>
+        {%for especialidad in especialidades%}
+            <h4>{{especialidad.nombre}}</h4>
+            <div class="buttons">
+                <a class="principal" href="{{url_for('contacts.update_contact',id=especialidad.id)}}">Modificar</a>
+                <a class="secundario" href="{{url_for('contacts.delete_contact',id=especialidad.id)}}">Eliminar</a>
+            </div>
+        {%endfor%}
+    </div>
+    
+</div>
+{%endblock%}

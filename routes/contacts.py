@@ -5,10 +5,18 @@ from models.especialidad import Especialidad
 contacts= Blueprint('contacts',__name__)
 
 
-@contacts.route('/')
-def index():
+@contacts.route('/paciente')
+def paciente():
+    return render_template('crearPaciente.html')
+
+@contacts.route('/pacienteLista')
+def listaPaciente():
     especialidades= Especialidad.query.all()
-    return render_template('index.html', especialidades=especialidades)
+    return render_template('listarPaciente.html', especialidades=especialidades)
+
+@contacts.route('/admin')
+def admin():
+    return render_template('profileAdmin.html')
 
 @contacts.post('/new')
 def add_contact():
@@ -19,7 +27,7 @@ def add_contact():
 
     flash("Epecialidad creada con exito!")
 
-    return redirect(url_for('contacts.index'))
+    return redirect(url_for('contacts.paciente'))
 
 @contacts.route('/update/<id>', methods= ['POST','GET'])
 def update_contact(id):
@@ -28,7 +36,7 @@ def update_contact(id):
         especialidad.nombre= request.form['nombre']
         db.session.commit()
         flash("Epecialidad modificada con exito!")
-        return redirect(url_for('contacts.index'))
+        return redirect(url_for('contacts.listaPaciente'))
     return render_template('update.html', especialidad=especialidad)
 
 @contacts.route('/delete/<id>')
@@ -37,4 +45,4 @@ def delete_contact(id):
     db.session.delete(especialidad)
     db.session.commit()
     flash("Epecialidad eliminada con exito!")
-    return redirect(url_for('contacts.index'))
+    return redirect(url_for('contacts.listaPaciente'))
