@@ -25,14 +25,21 @@
     width: auto;
 }
 .principal{
-    padding: 5px;
+    padding: 10px;
     border: 0px;
-    background-color: blue;
-    color:#fff
+    border-radius: 5px;
+    background-color: #ccc;
+    color:#000;
+    text-decoration: none;
 }
 .secundario{
-    padding: 5px;
+    padding: 10px;
     border: 0px;
-    background-color: #ccc;
-    color:#fff
+    border-radius: 5px;
+    background-color: blue;
+    color:#fff;
+    text-decoration: none;
+}
+hr{
+    border: #0000005b 1px solid;
 }

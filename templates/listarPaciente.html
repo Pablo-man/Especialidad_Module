@@ -20,10 +20,11 @@
         <h2 class="text-center">Listado Especialidades</h2>
         {%for especialidad in especialidades%}
             <h4>{{especialidad.nombre}}</h4>
-            <div class="buttons">
+            <div>
                 <a class="principal" href="{{url_for('contacts.update_contact',id=especialidad.id)}}">Modificar</a>
                 <a class="secundario" href="{{url_for('contacts.delete_contact',id=especialidad.id)}}">Eliminar</a>
             </div>
+            <hr>
         {%endfor%}
     </div>
     
